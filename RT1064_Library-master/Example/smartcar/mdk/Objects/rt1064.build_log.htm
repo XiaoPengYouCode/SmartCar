@@ -1,0 +1,122 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: zhongjin lu, Southeast University, LIC=MJWIE-P3M13-P3CM7-S0I00-WVZY4-PS1SI
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Community  Version: 5.38.0.0
+Toolchain Path:  D:\App\code\keil\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      CMSIS_AGDI.dll V1.33.15.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\projects\SMARTCAR\RT1064_Library-master\Example\smartcar\mdk\rt1064.uvprojx
+Project File Date:  03/19/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'D:\App\code\keil\ARM\ARMCLANG\Bin'
+Build target 'nor_sdram_zf_dtcm'
+../user/src/main.c(70): error: call to undeclared function 'board_init'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+        board_init();//<CE><F1><B1>乇<A3><C1><F4><A3><AC><B1><BE><BA><AF><CA><FD><D3><C3><D3>诔<F5>始<BB><AF>MPU 时<D6><D3> <B5><F7><CA>源<AE><BF><DA>
+        ^
+../user/src/main.c(71): error: too few arguments to function call, expected 2, have 0
+    pit_init();                     //<B3><F5>始<BB><AF>pit<CD><E2><C9><E8> 
+    ~~~~~~~~ ^
+../../libraries/zf_driver\zf_driver_pit.h(57): note: 'pit_init' declared here
+void pit_init (pit_index_enum pit_chn, uint32 period);
+     ^
+../user/src/main.c(72): error: call to undeclared function 'pit_interrupt_ms'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+        pit_interrupt_ms(PIT_CH0,6);  //<B3><F5>始<BB><AF>pit通<B5><C0>1 7ms
+        ^
+../user/src/main.c(78): error: call to undeclared function 'lcd_init'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    lcd_init();
+    ^
+../user/src/main.c(78): note: did you mean 'oled_init'?
+../../libraries/zf_device\zf_device_oled.h(134): note: 'oled_init' declared here
+void    oled_init                       (void);
+        ^
+../user/src/main.c(80): error: use of undeclared identifier 'ADC_1'
+    adc_init(ADC_1,adc0,ADC_8BIT);
+             ^
+../user/src/main.c(81): error: use of undeclared identifier 'ADC_1'
+    adc_init(ADC_1,adc1,ADC_8BIT);
+             ^
+../user/src/main.c(82): error: use of undeclared identifier 'ADC_1'
+    adc_init(ADC_1,adc2,ADC_8BIT);
+             ^
+../user/src/main.c(83): error: use of undeclared identifier 'ADC_1'
+    adc_init(ADC_1,adc3,ADC_8BIT);
+             ^
+../user/src/main.c(84): error: use of undeclared identifier 'ADC_1'
+    adc_init(ADC_1,adc4,ADC_8BIT);
+             ^
+../user/src/main.c(94): error: use of undeclared identifier 'GPIO_PIN_CONFIG'
+    gpio_init(B13, GPO, 1, GPIO_PIN_CONFIG);//<B5><E7><BB><FA>使<C4>芏<CB>
+                           ^
+../user/src/main.c(95): error: call to undeclared function 'gpio_interrupt_init'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    gpio_interrupt_init(D26, FALLING, GPIO_INT_CONFIG);
+    ^
+../user/src/main.c(95): note: did you mean 'interrupt_init'?
+../../libraries/zf_common/zf_common_interrupt.h(48): note: 'interrupt_init' declared here
+void        interrupt_init              (void);
+            ^
+../user/src/main.c(95): error: use of undeclared identifier 'FALLING'
+    gpio_interrupt_init(D26, FALLING, GPIO_INT_CONFIG);
+                             ^
+../user/src/main.c(95): error: use of undeclared identifier 'GPIO_INT_CONFIG'
+    gpio_interrupt_init(D26, FALLING, GPIO_INT_CONFIG);
+                                      ^
+../user/src/main.c(97): error: use of undeclared identifier 'GPIO_PIN_CONFIG'
+    gpio_init(C27,GPO,0,GPIO_PIN_CONFIG);//<B7><E4><C3><F9><C6><F7>
+                        ^
+../user/src/main.c(100): error: call to undeclared function 'qtimer_quad_init'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    qtimer_quad_init(QTIMER_1, QTIMER1_TIMER0_C0, QTIMER1_TIMER1_C1);
+    ^
+../user/src/main.c(100): note: did you mean 'encoder_quad_init'?
+../../libraries/zf_driver\zf_driver_encoder.h(89): note: 'encoder_quad_init' declared here
+void    encoder_quad_init       (encoder_index_enum encoder_n, encoder_channel1_enum ch1_pin, encoder_channel2_enum ch2_pin);
+        ^
+../user/src/main.c(100): error: use of undeclared identifier 'QTIMER_1'
+    qtimer_quad_init(QTIMER_1, QTIMER1_TIMER0_C0, QTIMER1_TIMER1_C1);
+                     ^
+../user/src/main.c(100): error: use of undeclared identifier 'QTIMER1_TIMER0_C0'
+    qtimer_quad_init(QTIMER_1, QTIMER1_TIMER0_C0, QTIMER1_TIMER1_C1);
+                               ^
+../user/src/main.c(100): error: use of undeclared identifier 'QTIMER1_TIMER1_C1'
+    qtimer_quad_init(QTIMER_1, QTIMER1_TIMER0_C0, QTIMER1_TIMER1_C1);
+                                                  ^
+../user/src/main.c(102): error: use of undeclared identifier 'QTIMER_1'
+    qtimer_quad_init(QTIMER_1, QTIMER1_TIMER2_C2, QTIMER1_TIMER3_C24);
+                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+compiling main.c...
+".\Objects\rt1064.axf" - 19 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: NXP
+                https://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.MIMXRT1064_DFP.16.0.0.pack
+                NXP.MIMXRT1064_DFP.16.0.0
+                Device Family Pack for MIMXRT1064
+
+<h2>Collection of Component include folders:</h2>
+  D:/App/code/keil/keil_packages/NXP/MIMXRT1064_DFP/16.0.0
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
